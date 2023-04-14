@@ -11,13 +11,20 @@
 //     console.log(process.pid);
 // }
 
-const process = require("process");
-console.log(process.argv);
+// const process = require("process");
+// console.log(process.argv);
 
+// function sayHello(fN, lN) {
+//     console.log(`Hello ${fN} ${lN}!`)
+// }
+
+// const fName = process.argv[2];
+// const lName = process.argv[3];
+// sayHello(fName, lName);
+
+const { argv } = require("process");
 function sayHello(fN, lN) {
     console.log(`Hello ${fN} ${lN}!`)
 }
-
-const fName = process.argv[2];
-const lName = process.argv[3];
+const [,,fName,lName] = argv;
 sayHello(fName, lName);
