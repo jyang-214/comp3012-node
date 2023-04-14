@@ -12,4 +12,12 @@
 // }
 
 const process = require("process");
-process.argv;
+console.log(process.argv);
+
+function sayHello(fN, lN) {
+    console.log(`Hello ${fN} ${lN}!`)
+}
+
+const fName = process.argv[2];
+const lName = process.argv[3];
+sayHello(fName, lName);
