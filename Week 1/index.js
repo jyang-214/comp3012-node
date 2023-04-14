@@ -1,4 +1,4 @@
+const os = require("os");
 
-
-var userInfo = os.userInfo();
+const userInfo = os.userInfo();
 console.log(userInfo);
