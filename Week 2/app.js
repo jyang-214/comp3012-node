@@ -62,18 +62,22 @@
 // map(arr, cb1);
 
 
-// CALLBACK FUNCTION
-const list = [1, 2, 3];
-const map = (arr, callback) => {
-  const newArray = [];
-  for (let index = 0; index < arr.length; index++) {
-    const element = arr[index];
-    newArray.push(callback(element, index, arr));
-  }
-  return newArray;
-};
-const cb = (v, i, arr) => {
-  return `INDEX: ${i}, VALUE: ${v * 20}`;
-};
-const result = map(list, cb);
-console.log(result);
+// // CALLBACK FUNCTION
+// const list = [1, 2, 3];
+// const map = (arr, callback) => {
+//   const newArray = [];
+//   for (let index = 0; index < arr.length; index++) {
+//     const element = arr[index];
+//     newArray.push(callback(element, index, arr));
+//   }
+//   return newArray;
+// };
+// const cb = (v, i, arr) => {
+//   return `INDEX: ${i}, VALUE: ${v * 20}`;
+// };
+// const result = map(list, cb);
+// console.log(result);
+
+const fs = require("fs");
+
+fs.writeFileSync("bcit.txt", "hi");
