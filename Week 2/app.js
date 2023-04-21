@@ -27,8 +27,13 @@ console.log(add(5, 4));
 // Indirectly Call the function
 const referenceOne = add;
 const referenceTwo = add;
-console.log(referenceOne(5, 2));
-console.log(referenceTwo(5, 3));
+referenceOne(5, 2);
+referenceTwo(5, 3);
 
 // Primitive Data: Number, String, Boolean, undefined is always going to create a copy
 // Complex Data: Funcitons, Arrays, Objects are always going to create a reference
+
+const addTwo = (num1, callback) => {    // addTwo is a Higher Order Function
+    return callback(num1, 2);           // callback is a callback function
+}
+addTwo(7, add);
