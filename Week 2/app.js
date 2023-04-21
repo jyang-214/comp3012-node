@@ -42,4 +42,8 @@ addTwo(7, add);
 // [1, 2, 3, 4].map( (n) => n*5 );
 // ["red", "green"].map( (c) => c.length);
 const arr = [1, 2, 3];
-arr.map(  );
+const cb = (n) => {
+  return n * 2;
+};
+const result = arr.map(cb);
+console.log(result);
