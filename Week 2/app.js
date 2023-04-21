@@ -80,4 +80,7 @@
 
 const fs = require("fs");
 
-fs.writeFileSync("bcit.txt", "hi");
+fs.writeFileSync("bcit.txt", "HI");
+const temp = fs.readFileSync("bcit.txt", "utf-8");
+console.log(temp);
+
