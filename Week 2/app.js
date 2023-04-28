@@ -1,3 +1,5 @@
+/** @format */
+
 // // Javascript Review
 
 // // Function Declaration Syntax
@@ -61,7 +63,6 @@
 
 // map(arr, cb1);
 
-
 // // CALLBACK FUNCTION
 // const list = [1, 2, 3];
 // const map = (arr, callback) => {
@@ -83,4 +84,3 @@ const fs = require("fs");
 fs.writeFileSync("bcit.txt", "HI");
 const temp = fs.readFileSync("bcit.txt", "utf-8");
 console.log(temp);
-

@@ -1,3 +1,5 @@
+/** @format */
+
 // const os = require("os");    // import 'os' module
 
 // const userInfo = os.userInfo();
@@ -24,7 +26,7 @@
 
 const { argv } = require("process");
 function sayHello(fN, lN) {
-    console.log(`Hello ${fN} ${lN}!`)
+	console.log(`Hello ${fN} ${lN}!`);
 }
-const [,,fName,lName] = argv;
+const [, , fName, lName] = argv;
 sayHello(fName, lName);
