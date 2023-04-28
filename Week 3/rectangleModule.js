@@ -22,14 +22,5 @@ function rect(l, w, callback) {
 		callback(null, result);
 	}
 }
-function callback(error, result) {
-	if (error) {
-		console.log(error);
-	} else {
-		console.log(
-			`Perimeter is: ${result.perimeter} and Area is ${result.area}`
-		);
-	}
-}
 
 module.exports = { rect };
