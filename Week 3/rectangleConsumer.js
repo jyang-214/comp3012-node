@@ -29,3 +29,5 @@ solveRect(1, 4);
 solveRect(5, -1);
 // Console log below:
 // Error: Dimensions must be greater than 0
+
+solveRect(11, 4);
