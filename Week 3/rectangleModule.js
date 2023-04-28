@@ -11,6 +11,25 @@
  * Otherwise...call the callback function with null for the error and for the result, an object containing the area and the perimeter.
  * @format
  */
-function rect() {}
+function rect(l, w, callback) {
+	// Your Logic should go here
+	if (l <= 0 || w <= 0) {
+		callback(new Error("Dimensions must be greater than 0."));
+	} else {
+		const perim = 2 * l + 2 * w;
+		const area = l * w;
+		const result = { perimeter: perim, area: area };
+		callback(null, result);
+	}
+}
+function callback(error, result) {
+	if (error) {
+		console.log(error);
+	} else {
+		console.log(
+			`Perimeter is: ${result.perimeter} and Area is ${result.area}`
+		);
+	}
+}
 
 module.exports = { rect };

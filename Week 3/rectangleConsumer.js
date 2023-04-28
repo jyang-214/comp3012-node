@@ -6,7 +6,19 @@ solveRect should be here
 const { rect } = require("./rectangleModule");
 
 function solveRect(l, w) {
-	rect();
+	// Call the fucntion rect here...
+	// NO LOGIC...ONLY LOGGING
+	rect(l, w, callback);
+}
+
+function callback(error, result) {
+	if (error) {
+		console.log(error);
+	} else {
+		console.log(
+			`Perimeter is: ${result.perimeter} and Area is ${result.area}`
+		);
+	}
 }
 
 solveRect(1, 4);
