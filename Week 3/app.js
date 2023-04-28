@@ -12,9 +12,11 @@
 
 const fs = require("fs");
 fs.writeFile("bcit.txt", "hi", (err) => {
-	console.log("Callback function has been invoked.");
+	// writeFile is an asynchronous funciton
 	if (err) {
 		console.log(err.message);
+	} else {
+		console.log("Done!");
 	}
 });
 console.log("I was called");
