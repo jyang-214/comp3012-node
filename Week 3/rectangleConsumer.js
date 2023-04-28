@@ -3,10 +3,10 @@
 solveRect should be here
 */
 
-const rectangleModule = require("./rectangleModule");
+const { rect } = require("./rectangleModule");
 
 function solveRect(l, w) {
-	return;
+	rect();
 }
 
 solveRect(1, 4);
