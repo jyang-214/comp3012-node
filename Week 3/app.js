@@ -1,1 +1,6 @@
-console.log("Hello World!");
+// Tasks:
+// - IO-Bound Tasks:
+//                  - Disk
+//                  - Database
+//                  - Neetwork
+// - CPU-Bound Tasks:
