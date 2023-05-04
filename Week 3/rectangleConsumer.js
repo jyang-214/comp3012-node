@@ -3,7 +3,7 @@
 solveRect should be here
 */
 
-const { rect } = require("./rectangleModule");
+const { rect } = require("./RectangleModule");
 
 function solveRect(l, w) {
 	// Call the fucntion rect here...
