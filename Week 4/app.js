@@ -23,6 +23,12 @@
 // 	}
 // });
 
+/*
+2 Fundamental Problems with Async Callbacks
+1) Readability Issues(Nested-Functions)
+2) No Centralized Error Handling
+*/
+
 const fs = require("fs");
 fs.readFile("file1.txt", "utf-8", (err, data1) => {
 	if (err) {
