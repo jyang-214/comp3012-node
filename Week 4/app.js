@@ -24,31 +24,31 @@
 // });
 
 const fs = require("fs");
-fs.readFile("file1.txt", "utf-8", (err, data) => {
+fs.readFile("file1.txt", "utf-8", (err, data1) => {
 	if (err) {
-		return console.log(err);
+		console.log(err);
 	} else {
-		fs.readFile(data, "utf-8", (err, data) => {
+		fs.readFile(data1, "utf-8", (err, data2) => {
 			if (err) {
-				return console.log(err);
+				console.log(err);
 			} else {
-				fs.readFile(data, "utf-8", (err, data) => {
+				fs.readFile(data2, "utf-8", (err, data3) => {
 					if (err) {
-						return console.log(err);
+						console.log(err);
 					} else {
-						fs.readFile(data, "utf-8", (err, data) => {
+						fs.readFile(data3, "utf-8", (err, data4) => {
 							if (err) {
-								return console.log(err);
+								console.log(err);
 							} else {
-								console.log(data);
+								console.log(data4);
+								console.log(data1);
+								console.log(data2);
+								console.log(data3);
 							}
 						});
-						console.log(data);
 					}
 				});
-				console.log(data);
 			}
 		});
-		console.log(data);
 	}
 });
