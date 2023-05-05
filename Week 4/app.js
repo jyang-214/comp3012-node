@@ -27,6 +27,8 @@
 2 Fundamental Problems with Async Callbacks
 1) Readability Issues(Nested-Functions)
 2) No Centralized Error Handling
+
+Promises solve the above 2 issues
 */
 
 const fs = require("fs");
