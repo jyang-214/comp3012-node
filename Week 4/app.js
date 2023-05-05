@@ -13,7 +13,7 @@
 // console.log(calc(5, 5, add));
 
 const fs = require("fs");
-const content = fs.readFile("hi.txt", (err, data) => {
+const content = fs.readFile("hi.txt", "utf-8", (err, data) => {
 	if (err) {
 		console.log(err);
 	}
