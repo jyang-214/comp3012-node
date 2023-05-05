@@ -13,9 +13,10 @@
 // console.log(calc(5, 5, add));
 
 const fs = require("fs");
-const content = fs.readFile("hi.txt", "utf-8", (err, data) => {
+fs.readFile("hi.txt", "utf-8", (err, data) => {
 	if (err) {
-		console.log(err);
+		console.log(new Error("Filename doesn't exist!"));
+	} else {
+		console.log(data);
 	}
-	console.log(data);
 });
