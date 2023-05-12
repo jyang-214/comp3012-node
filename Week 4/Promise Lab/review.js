@@ -23,7 +23,7 @@ function multiplier(number1, number2) {
 	});
 }
 
-multiplier(1, "a")
+multiplier(11, 13)
 	.then((data) => {
 		console.log(data);
 	})

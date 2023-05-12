@@ -17,10 +17,11 @@
 // });
 
 // With Promises
+const fs = require("fs");
 function writeFileP(filename, data) {
 	return new Promise((resolve, reject) => {
 		// default value is pending and undefined
-		fs.writefile(filename, data, (err) => {
+		fs.writeFile(filename, data, (err) => {
 			if (err) {
 				reject(err);
 			} else {
