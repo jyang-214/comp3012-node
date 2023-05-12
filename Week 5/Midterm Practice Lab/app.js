@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { EOL } = require("os");
 
 const coffeeTypes = { DR: "dark-roast", MR: "medium-roast", B: "blonde" };
 const viewAllSupply = (coffeeType, callback) => {
@@ -12,7 +13,7 @@ const viewAllSupply = (coffeeType, callback) => {
 			if (err) {
 				callback(err, null);
 			} else {
-				let database = data.split("\n");
+				let database = data.split(EOL);
 				let counter = 0;
 				database.forEach((element) => {
 					if (element === coffeeTypes[coffeeType]) {
