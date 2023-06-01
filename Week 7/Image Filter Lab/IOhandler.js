@@ -63,12 +63,12 @@ const readDir = (dir) => {
  * @param {string} pathProcessed
  * @return {promise}
  */
-const grayScale = (dirPath, outputPath) => {
-	return readDir(dirPath)
+const grayScale = (filePath, pathProcessed) => {
+	return readDir(filePath)
 		.then((pngFiles) => {
 			const promises = pngFiles.map((filePath) => {
 				const fileName = path.basename(filePath);
-				const outputFile = path.join(outputPath, fileName);
+				const outputFile = path.join(pathProcessed, fileName);
 
 				return new Promise((resolve, reject) => {
 					const inputStream = fs.createReadStream(filePath);
