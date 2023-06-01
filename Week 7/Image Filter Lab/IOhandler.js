@@ -3,8 +3,8 @@
  * File Name: IOhandler.js
  * Description: Collection of functions for files input/output related operations
  *
- * Created Date:
- * Author:
+ * Created Date: May 31, 2023
+ * Author: Jacky (Chieh Chi) Yang
  *
  */
 
@@ -63,24 +63,17 @@ const readDir = (dir) => {
  * @param {string} pathProcessed
  * @return {promise}
  */
-const grayScale = (filePath, pathProcessed) => {
-	return new Promise((resolve, reject) => {
-		fs.readdir(filePath, (error, files) => {
-			if (error) {
-				reject(error);
-				return;
-			}
-
-			const pngFiles = files.filter(
-				(file) => path.extname(file) === ".png"
-			);
-
-			const promises = pngFiles.map((file) => {
-				const inputPath = path.join(filePath, file);
-				const outputFile = path.join(pathProcessed, file);
+const grayScale = (dirPath, outputPath) => {
+	return readDir(dirPath)
+		.then((pngFiles) => {
+			const promises = pngFiles.map((filePath) => {
+				const fileName = path.basename(filePath);
+				const outputFile = path.join(outputPath, fileName);
 
 				return new Promise((resolve, reject) => {
-					fs.createReadStream(inputPath)
+					const inputStream = fs.createReadStream(filePath);
+					const outputStream = fs.createWriteStream(outputFile);
+					inputStream
 						.pipe(new PNG())
 						.on("parsed", function () {
 							for (let y = 0; y < this.height; y++) {
@@ -98,7 +91,7 @@ const grayScale = (filePath, pathProcessed) => {
 							}
 
 							this.pack()
-								.pipe(fs.createWriteStream(outputFile))
+								.pipe(outputStream)
 								.on("finish", resolve)
 								.on("error", reject);
 						})
@@ -106,11 +99,14 @@ const grayScale = (filePath, pathProcessed) => {
 				});
 			});
 
-			Promise.all(promises)
-				.then(() => resolve("Grayscale Operation completed."))
-				.catch((error) => reject(error));
+			return Promise.all(promises);
+		})
+		.then(() => {
+			return "Grayscale Operation completed successfully.";
+		})
+		.catch((err) => {
+			return err;
 		});
-	});
 };
 
 module.exports = {

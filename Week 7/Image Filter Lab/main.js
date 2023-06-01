@@ -4,8 +4,8 @@ const path = require("path");
  * File Name: main.js
  * Description:
  *
- * Created Date:
- * Author:
+ * Created Date: May 31, 2023
+ * Author: Jacky (Chieh Chi) Yang
  *
  */
 
