@@ -1,0 +1,4 @@
+Client side: bcit.ca -> DNS Lookup -> 62.1.1.2
+Server side: (static) Web Server (Apache, Nginx)
+    When a programming langugage is attached to a static server, 
+    it is now a dynamic web server
