@@ -8,9 +8,7 @@ const server = http.createServer((req, res) => {
 				res.statusCode = 500;
 				res.end("Internal Server Error");
 			} else {
-				const bootstrapCDN = `
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        `;
+				const bootstrapCDN = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">`;
 
 				res.setHeader("Content-Type", "text/html");
 				res.write(bootstrapCDN);
@@ -44,27 +42,25 @@ const server = http.createServer((req, res) => {
 				result = "Invalid conversion type";
 			}
 
-			const bootstrapCDN = `
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-      `;
+			const bootstrapCDN = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">`;
 
 			const resultPage = `
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="UTF-8">
-            <title>Temperature Converter - Result</title>
-            ${bootstrapCDN}
-          </head>
-          <body>
-            <div class="container">
-              <h1 class="mt-4">Result</h1>
-              <p>${result}</p>
-              <button onclick="window.location.href='/'" class="btn btn-primary">Go Back</button>
-            </div>
-          </body>
-        </html>
-      `;
+								<!DOCTYPE html>
+								<html>
+								<head>
+									<meta charset="UTF-8">
+									<title>Temperature Converter - Result</title>
+									${bootstrapCDN}
+								</head>
+								<body>
+									<div class="container">
+									<h1 class="mt-4">Result</h1>
+									<p>${result}</p>
+									<button onclick="window.location.href='/'" class="btn btn-primary">Go Back</button>
+									</div>
+								</body>
+								</html>
+   							   `;
 
 			res.setHeader("Content-Type", "text/html; charset=UTF-8");
 			res.end(resultPage);
