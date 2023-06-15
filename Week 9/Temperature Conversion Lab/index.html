@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Homepage</title>
+		<title>Temperature Converter</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"
+		/>
+		<style>
+			/* Custom CSS */
+			#temperature {
+				max-width: 200px;
+			}
+		</style>
 	</head>
 	<body>
-		<form action="/login" method="POST">
-			<input type="text" name="temperatureInput" />
-			<input type="radio" name="cToF" id="" />
-			<input type="radio" name="fToC" id="" />
-			<button>Convert</button>
-		</form>
+		<div class="container">
+			<h1 class="mt-4">Temperature Converter</h1>
+			<form id="conversion-form" action="/convert" method="POST">
+				<div class="row">
+					<div class="col-md-6 col-lg-4 mb-3">
+						<label for="temperature" class="form-label"
+							>Temperature:</label
+						>
+						<input
+							type="number"
+							id="temperature"
+							name="temperature"
+							required
+							class="form-control"
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-lg-4 mb-3">
+						<div class="form-check">
+							<input
+								type="radio"
+								id="celsiusToFahrenheit"
+								name="conversionType"
+								value="celsiusToFahrenheit"
+								checked
+								class="form-check-input"
+							/>
+							<label
+								for="celsiusToFahrenheit"
+								class="form-check-label"
+								>Celsius to Fahrenheit</label
+							>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 mb-3">
+						<div class="form-check">
+							<input
+								type="radio"
+								id="fahrenheitToCelsius"
+								name="conversionType"
+								value="fahrenheitToCelsius"
+								class="form-check-input"
+							/>
+							<label
+								for="fahrenheitToCelsius"
+								class="form-check-label"
+								>Fahrenheit to Celsius</label
+							>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-lg-4">
+						<button type="submit" class="btn btn-primary">
+							Convert
+						</button>
+					</div>
+				</div>
+			</form>
+			<div id="result" class="mt-4"></div>
+		</div>
+
+		<script src="script.js"></script>
 	</body>
 </html>
